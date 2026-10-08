@@ -1,0 +1,19 @@
+{
+  "request": {"targets":[{"name":"Impatient","minRank":4}],"exactCount":true,"gizmoTypes":["armour"],"ancientModes":[true],"invLevel":137,"maxDistinctMats":9},
+  "matches": 494950,
+  "baselineSearchMs": 8562.5909,
+  "optimizedSearchMs": 934.9858,
+  "optimizedApiAndDecodeMs": 1685.0089,
+  "browserCompleteSeconds": 2.54,
+  "browserNativeSearchMs": 1015.65,
+  "baselineResponseBytes": 181815731,
+  "compactResponseBytes": 44667974,
+  "baselineRecipeComparisons": 494950,
+  "baselineMaxProbabilityDifference": 4.440892098500626e-16,
+  "bestLevelsAndLabelsIdentical": true,
+  "wikiSampleRows": 497,
+  "wikiMaxRawProbabilityDifference": 1.790262122691626e-15,
+  "wikiMaxConditionalDifference": 1.0795841376420867e-7,
+  "wikiRoundingNote": "The original Wiki divides by 1-noEffect and can exceed 100% on extremely rare non-empty outcomes; the engine uses stable consumption probabilities.",
+  "scope": "Development-machine observations, not a universal runtime guarantee. All recipes retained; no sampling or result truncation in the search."
+}

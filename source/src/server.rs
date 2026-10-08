@@ -13,6 +13,74 @@ fn reply(stream: &mut TcpStream, status: &str, mime: &str, body: &[u8]) {
     );
     let _ = stream.write_all(body);
 }
+// Optional UI wire format: dictionary-encode repeated names and omit per-row
+// JSON field names. The normal API remains unchanged for tools and tests.
+fn compact_result(result: &search::Response, data: &Data) -> Vec<u8> {
+    #[derive(serde::Serialize)]
+    #[serde(rename_all = "camelCase")]
+    struct Compact<'a> {
+        compact: bool,
+        material_names: Vec<&'a str>,
+        labels: Vec<&'a str>,
+        rows: Vec<(
+            Vec<usize>,
+            f64,
+            &'a [usize],
+            f64,
+            usize,
+            usize,
+            &'a str,
+            bool,
+        )>,
+        search_ms: f64,
+        survivors: usize,
+        logical_total: u64,
+        cancelled: bool,
+    }
+    let mut names: Vec<&str> = data.mats.iter().map(|m| m.name.as_str()).collect();
+    names.push("");
+    let material_ids: HashMap<&str, usize> =
+        names.iter().enumerate().map(|(i, &s)| (s, i)).collect();
+    let mut labels = Vec::new();
+    let mut label_ids = HashMap::new();
+    let rows = result
+        .rows
+        .iter()
+        .map(|r| {
+            let next = labels.len();
+            let label = *label_ids
+                .entry(r.top_result_key.as_str())
+                .or_insert_with(|| {
+                    labels.push(r.top_result_key.as_str());
+                    next
+                });
+            (
+                r.materials
+                    .iter()
+                    .map(|m| material_ids[m.as_str()])
+                    .collect(),
+                r.prob_per_gizmo,
+                r.best_levels.as_slice(),
+                r.no_effect_prob,
+                r.permutations_tried,
+                label,
+                r.gizmo_type.as_str(),
+                r.ancient,
+            )
+        })
+        .collect();
+    serde_json::to_vec(&Compact {
+        compact: true,
+        material_names: names,
+        labels,
+        rows,
+        search_ms: result.search_ms,
+        survivors: result.survivors,
+        logical_total: result.logical_total,
+        cancelled: result.cancelled,
+    })
+    .unwrap()
+}
 pub fn run(data: Data) {
     #[cfg(windows)]
     {
@@ -182,7 +250,11 @@ pub fn run(data: Data) {
                         &mut stream,
                         "200 OK",
                         "application/json",
-                        &serde_json::to_vec(&result).unwrap(),
+                        &if first[1].ends_with("?compact=1") {
+                            compact_result(&result, &data)
+                        } else {
+                            serde_json::to_vec(&result).unwrap()
+                        },
                     ),
                     Err(e) => reply(&mut stream, "400 Bad Request", "text/plain", e.as_bytes()),
                 };

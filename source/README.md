@@ -49,6 +49,21 @@ The CI workflow has been added but has not yet run on GitHub.
 
 ## Accuracy and performance boundaries
 
+For the broad Impatient 4 + EMPTY case, the optimized engine skips material
+orderings proven equivalent for single-result searches. Without double-slot
+competitors it also multiplies independent affordability probabilities rather
+than enumerating all combinations of perk ranks. Target-cost ties and mixed
+single-/double-slot cost ties retain the general evaluator. Fixed highest-rank
+EMPTY results do not need another pass merely to determine their label.
+
+The UI requests `POST /api/search?compact=1` for dictionary-encoded names and
+array rows; plain `/api/search` retains the original object format. Results
+are appended and sorted once per batch instead of individually inserted into
+sorted arrays. `node source/tests/empty-performance.mjs` checks this wire format
+and 497 original-Wiki samples. An optional previous-EXE path additionally
+compares all 494,950 recipes, probabilities, best levels and labels. Measured
+browser completion is 2.54 seconds; see `benchmarks/impatient-empty-optimized.json`.
+
 The benchmark is Impatient 4 + Mobile, Ancient Armour, all eligible materials,
 one through nine filled slots, up to nine distinct materials, effective levels
 1–137. Exact bounds reject impossible material multisets; they are not sampled.

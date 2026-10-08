@@ -239,7 +239,17 @@ pub fn run(data: &Data, request: Request, cancel: Arc<AtomicBool>) -> Result<Res
                         .filter_map(|m| {
                             let mut row = e.exhaustive(m)?;
                             // If each target has just one qualifying rank and different costs, its output label is fixed.
-                            if targets.len() == 2
+                            if engine.exact
+                                && targets.len() == 1
+                                && data.perks[targets[0].0].ranks.len() == targets[0].1
+                            {
+                                let (p, r) = targets[0];
+                                row.top_result_key = if data.perks[p].ranks.len() > 1 {
+                                    format!("{} {}", data.perks[p].name, r)
+                                } else {
+                                    data.perks[p].name.clone()
+                                };
+                            } else if targets.len() == 2
                                 && targets.iter().all(|&(p, r)| data.perks[p].ranks.len() == r)
                                 && data.perks[targets[0].0].ranks[targets[0].1 - 1].cost
                                     != data.perks[targets[1].0].ranks[targets[1].1 - 1].cost

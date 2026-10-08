@@ -2010,8 +2010,20 @@
 					var incomingRows = msg.type === 'result-batch' ? (msg.rows || []) : [msg.row];
 					rowsCount += incomingRows.length;
 					for (var ri = 0; ri < incomingRows.length; ri++) {
-						appendNewRow(incomingRows[ri], true);
+						var row = incomingRows[ri];
+						if (msg.compact) {
+							row = { materials: row[0].map(function (id) { return msg.materialNames[id]; }),
+								probPerGizmo: row[1], bestLevels: row[2], noEffectProb: row[3],
+								permutationsTried: row[4], topResultKey: msg.labels[row[5]], gizmoType: row[6], ancient: row[7] };
+						}
+						annotateRowData(row);
+						allRowsData.push(row);
+						trackRowFilters(row);
 					}
+					// Native searches return a complete batch: append, then sort once.
+					// Repeated sorted-array splices move billions of elements.
+					allRowsData.sort(compareRowsData);
+					rebuildFilteredView();
 					rebuildVisibleDOM();
 					updateShowMoreBtn();
 					updateExportBtn();

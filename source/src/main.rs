@@ -306,6 +306,73 @@ impl<'a> Engine<'a> {
             })
             .collect()
     }
+    // For a single-slot target + EMPTY, with no double-slot competitors or
+    // target-cost ties, every other perk must be unaffordable before the
+    // target, or cheaper than it and unaffordable afterwards. Independent
+    // rank rolls let us multiply those probabilities instead of enumerating
+    // their Cartesian product. All first-appearance orders are equivalent.
+    fn exact_single_eligible(&self, ds: &[Vec<State>]) -> bool {
+        if !self.exact || self.blacklist_empty || self.targets.len() != 1 {
+            return false;
+        }
+        let (target, rank) = self.targets[0];
+        // A double-slot second perk makes the result single-slot. Reordering
+        // equal-cost single/double competitors could change that, so fall
+        // back for those ties. Equal-cost competitors of the same slot type
+        // cannot change whether the second slot survives.
+        if ds
+            .iter()
+            .filter(|d| self.data.perks[d[0].perk].double)
+            .any(|d| {
+                d.iter().filter(|s| s.cost > 0).any(|s| {
+                    ds.iter()
+                        .filter(|q| !self.data.perks[q[0].perk].double)
+                        .any(|q| q.iter().any(|r| r.cost == s.cost))
+                })
+            })
+        {
+            return false;
+        }
+        let Some(td) = ds.iter().find(|d| d[0].perk == target) else {
+            return false;
+        };
+        !td.iter().filter(|s| s.rank >= rank).any(|t| {
+            ds.iter()
+                .filter(|d| d[0].perk != target)
+                .any(|d| d.iter().any(|s| s.cost > 0 && s.cost == t.cost))
+        })
+    }
+    fn exact_single_profile(&self, ds: &[Vec<State>]) -> [f64; 128] {
+        let (target, rank) = self.targets[0];
+        let td = ds.iter().find(|d| d[0].perk == target).unwrap();
+        let mut hit = [0.; 128];
+        for t in td.iter().filter(|s| s.rank >= rank && s.cost > 0) {
+            for (i, h) in hit.iter_mut().enumerate() {
+                let budget = 1 + i * 5;
+                if budget <= t.cost {
+                    continue;
+                }
+                let mut p = t.p;
+                for d in ds.iter().filter(|d| d[0].perk != target) {
+                    let allowed: f64 = d
+                        .iter()
+                        .filter(|s| {
+                            s.cost == 0
+                                || s.cost >= budget
+                                || (s.cost < t.cost && s.cost >= budget - t.cost)
+                        })
+                        .map(|s| s.p)
+                        .sum();
+                    p *= allowed;
+                    if p == 0. {
+                        break;
+                    }
+                }
+                *h += p;
+            }
+        }
+        hit
+    }
     fn evaluate_distributions(
         &self,
         mats: &[usize],
@@ -399,14 +466,22 @@ impl<'a> Engine<'a> {
                 b = 1 + ((end - 1).div_ceil(5)) * 5;
             }
         }
-        walk(
-            self,
-            &filtered,
-            0,
-            &mut Vec::with_capacity(20),
-            1.,
-            &mut hit,
-        );
+        if self.exact_single_eligible(distributions)
+            && distributions
+                .iter()
+                .all(|d| !self.data.perks[d[0].perk].double)
+        {
+            hit = self.exact_single_profile(distributions);
+        } else {
+            walk(
+                self,
+                &filtered,
+                0,
+                &mut Vec::with_capacity(20),
+                1.,
+                &mut hit,
+            );
+        }
         let changes = |values: &[f64; 128]| {
             let mut prev = 0.;
             values
@@ -540,7 +615,9 @@ impl<'a> Engine<'a> {
                 .iter()
                 .any(|&(p, c)| s.perk != p && s.cost == c)
         });
-        if distributions.len() < 20 && !sensitive && self.targets.len() == 2 {
+        if self.exact_single_eligible(&distributions)
+            || (distributions.len() < 20 && !sensitive && self.targets.len() == 2)
+        {
             return self.evaluate_distributions(mats, &distributions, &empty);
         }
         fn visit(
