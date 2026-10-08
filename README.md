@@ -10,8 +10,7 @@ file** button, then double-click it. The calculator opens in your default
 browser. **The EXE is all you need**: no source folder, installer, npm, Node,
 Rust installation, or companion files. Windows x64 only.
 
-Calculations and interface assets are embedded and work offline. Game artwork
-is not loaded; outbound Wiki reference links require internet. The application
+Calculations and interface assets are embedded and work offline. The application
 serves only on `127.0.0.1`, chooses an available port, and shuts down about
 90 seconds after its browser tabs close.
 
