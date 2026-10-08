@@ -1,0 +1,7 @@
+/source/target/
+/result.json
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+

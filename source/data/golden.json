@@ -1,0 +1,675 @@
+[
+  {
+    "kind": 1,
+    "ancient": true,
+    "targets": [
+      [
+        "Impatient",
+        4
+      ],
+      [
+        "Mobile",
+        1
+      ]
+    ],
+    "mats": [
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zamorak components",
+      "Dextrous components",
+      "Dextrous components"
+    ],
+    "level": 137,
+    "distributions": [
+      [
+        {
+          "rank": 4,
+          "probability": 0.9999999999999994,
+          "cost": 160,
+          "perk": "Impatient"
+        }
+      ],
+      [
+        {
+          "rank": 2,
+          "probability": 1.0000000000000004,
+          "cost": 120,
+          "perk": "Enhanced Devoted"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999998,
+          "cost": 0,
+          "perk": "Devoted"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.8224852071005916,
+          "cost": 0,
+          "perk": "Demon Slayer"
+        },
+        {
+          "rank": 1,
+          "probability": 0.17751479289940825,
+          "cost": 35,
+          "perk": "Demon Slayer"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.4310204081632653,
+          "cost": 0,
+          "perk": "Mobile"
+        },
+        {
+          "rank": 1,
+          "probability": 0.5689795918367347,
+          "cost": 35,
+          "perk": "Mobile"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.515625,
+          "cost": 0,
+          "perk": "Reflexes"
+        },
+        {
+          "rank": 1,
+          "probability": 0.484375,
+          "cost": 35,
+          "perk": "Reflexes"
+        }
+      ]
+    ],
+    "outcomes": {
+      "Enhanced Devoted 2": 0.053794647923974086,
+      "Impatient 4": 0.5622642152495227,
+      "Impatient 4,Reflexes": 0.09808716830891506,
+      "Impatient 4,Mobile": 0.2673186952544039,
+      "Impatient 4,Demon Slayer": 0.018535273263184937
+    }
+  },
+  {
+    "kind": 1,
+    "ancient": true,
+    "targets": [
+      [
+        "Impatient",
+        4
+      ],
+      [
+        "Mobile",
+        1
+      ]
+    ],
+    "mats": [
+      "Dextrous components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zamorak components",
+      "Dextrous components"
+    ],
+    "level": 137,
+    "distributions": [
+      [
+        {
+          "rank": 0,
+          "probability": 0.8224852071005916,
+          "cost": 0,
+          "perk": "Demon Slayer"
+        },
+        {
+          "rank": 1,
+          "probability": 0.17751479289940825,
+          "cost": 35,
+          "perk": "Demon Slayer"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.4310204081632653,
+          "cost": 0,
+          "perk": "Mobile"
+        },
+        {
+          "rank": 1,
+          "probability": 0.5689795918367347,
+          "cost": 35,
+          "perk": "Mobile"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.515625,
+          "cost": 0,
+          "perk": "Reflexes"
+        },
+        {
+          "rank": 1,
+          "probability": 0.484375,
+          "cost": 35,
+          "perk": "Reflexes"
+        }
+      ],
+      [
+        {
+          "rank": 4,
+          "probability": 0.9999999999999994,
+          "cost": 160,
+          "perk": "Impatient"
+        }
+      ],
+      [
+        {
+          "rank": 2,
+          "probability": 1.0000000000000004,
+          "cost": 120,
+          "perk": "Enhanced Devoted"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999998,
+          "cost": 0,
+          "perk": "Devoted"
+        }
+      ]
+    ],
+    "outcomes": {
+      "Enhanced Devoted 2": 0.05379464792397407,
+      "Impatient 4": 0.5622642152495227,
+      "Impatient 4,Reflexes": 0.18717268002286747,
+      "Impatient 4,Mobile": 0.11336823734577944,
+      "Impatient 4,Demon Slayer": 0.08340021945785693
+    }
+  },
+  {
+    "kind": 0,
+    "ancient": false,
+    "targets": [
+      [
+        "Precise",
+        1
+      ]
+    ],
+    "mats": [
+      "Precise components",
+      "Armadyl components",
+      "Sharp components",
+      "Dextrous components",
+      "Precise components"
+    ],
+    "level": 137,
+    "distributions": [
+      [
+        {
+          "rank": 0,
+          "probability": 0.6271808999081723,
+          "cost": 0,
+          "perk": "Eruptive"
+        },
+        {
+          "rank": 1,
+          "probability": 0.3728191000918271,
+          "cost": 40,
+          "perk": "Eruptive"
+        }
+      ],
+      [
+        {
+          "rank": 1,
+          "probability": 0.1123046875,
+          "cost": 35,
+          "perk": "Precise"
+        },
+        {
+          "rank": 2,
+          "probability": 0.88720703125,
+          "cost": 65,
+          "perk": "Precise"
+        },
+        {
+          "rank": 3,
+          "probability": 0.00048828125,
+          "cost": 120,
+          "perk": "Precise"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.013885498046875,
+          "cost": 0,
+          "perk": "Flanking"
+        },
+        {
+          "rank": 1,
+          "probability": 0.986114501953125,
+          "cost": 30,
+          "perk": "Flanking"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999993,
+          "cost": 0,
+          "perk": "Taunting"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999993,
+          "cost": 0,
+          "perk": "Demon Slayer"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.8636363636363632,
+          "cost": 0,
+          "perk": "Mobile"
+        },
+        {
+          "rank": 1,
+          "probability": 0.13636363636363638,
+          "cost": 35,
+          "perk": "Mobile"
+        }
+      ]
+    ],
+    "outcomes": {
+      "Precise 1": 0.0008446622587959963,
+      "Precise 1,Mobile": 0.009604821132294007,
+      "Precise 1,Flanking 1": 0.05998587157906601,
+      "Precise 2": 0.00667283184448837,
+      "Precise 2,Mobile": 0.07587808694512264,
+      "Precise 2,Flanking 1": 0.4738883854746214,
+      "Precise 3": 0.00006348722673862553,
+      "Precise 3,Mobile": 0.00003633679319558214,
+      "Precise 3,Flanking 1": 0.00023607860655960918,
+      "Eruptive 1,Precise 1": 0.036159878093956016,
+      "Eruptive 1,Mobile": 0.005709454435887796,
+      "Precise 2,Eruptive 1": 0.3307677269857662,
+      "Precise 3,Eruptive 1": 0.00015237862350618234
+    }
+  },
+  {
+    "kind": 1,
+    "ancient": true,
+    "targets": [
+      [
+        "Biting",
+        2
+      ]
+    ],
+    "mats": [
+      "Noxious components",
+      "Direct components",
+      "Direct components",
+      "Zaros components",
+      "Zamorak components",
+      "Subtle components",
+      "Dextrous components"
+    ],
+    "level": 137,
+    "distributions": [
+      [
+        {
+          "rank": 0,
+          "probability": 0.004930966469428008,
+          "cost": 0,
+          "perk": "Biting"
+        },
+        {
+          "rank": 1,
+          "probability": 0.994082840236686,
+          "cost": 35,
+          "perk": "Biting"
+        },
+        {
+          "rank": 2,
+          "probability": 0.0009861932938855988,
+          "cost": 80,
+          "perk": "Biting"
+        }
+      ],
+      [
+        {
+          "rank": 1,
+          "probability": 1,
+          "cost": 35,
+          "perk": "Impatient"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999998,
+          "cost": 0,
+          "perk": "Enhanced Devoted"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999998,
+          "cost": 0,
+          "perk": "Devoted"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999996,
+          "cost": 0,
+          "perk": "Looting"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.4310204081632653,
+          "cost": 0,
+          "perk": "Mobile"
+        },
+        {
+          "rank": 1,
+          "probability": 0.5689795918367347,
+          "cost": 35,
+          "perk": "Mobile"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.96875,
+          "cost": 0,
+          "perk": "Crystal Shield"
+        },
+        {
+          "rank": 1,
+          "probability": 0.03125,
+          "cost": 30,
+          "perk": "Crystal Shield"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999996,
+          "cost": 0,
+          "perk": "Demon Slayer"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Reflexes"
+        }
+      ]
+    ],
+    "outcomes": {
+      "Impatient 1": 0.002058930080908103,
+      "Impatient 1,Crystal Shield 1": 0.00006641709938413238,
+      "Mobile,Impatient 1": 0.5684184679789076,
+      "Impatient 1,Biting 1": 0.42846999154691456,
+      "Biting 2,Impatient 1": 0.000425069436058446,
+      "Biting 2,Mobile": 0.0005611238578271531
+    }
+  },
+  {
+    "kind": 1,
+    "ancient": true,
+    "targets": [
+      [
+        "Enhanced Devoted",
+        1
+      ]
+    ],
+    "mats": [
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components",
+      "Zaros components"
+    ],
+    "level": 137,
+    "distributions": [
+      [
+        {
+          "rank": 4,
+          "probability": 1.0000000000000002,
+          "cost": 160,
+          "perk": "Impatient"
+        }
+      ],
+      [
+        {
+          "rank": 4,
+          "probability": 1.0000000000000013,
+          "cost": 230,
+          "perk": "Enhanced Devoted"
+        }
+      ]
+    ],
+    "outcomes": {
+      "Impatient 4": 0.26228170105155224,
+      "Enhanced Devoted 4": 0.6839236510244766,
+      "": 0.05379464792397419
+    }
+  },
+  {
+    "kind": 1,
+    "ancient": true,
+    "targets": [
+      [
+        "Efficient",
+        1
+      ]
+    ],
+    "mats": [
+      "Crystal parts",
+      "Clear parts",
+      "Fortunate components",
+      "Magic parts",
+      "Organic parts",
+      "Flexible parts",
+      "Cover parts",
+      "Spiked parts",
+      "Crystal parts"
+    ],
+    "level": 137,
+    "distributions": [
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999999,
+          "cost": 0,
+          "perk": "Efficient"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1.0000000000000004,
+          "cost": 0,
+          "perk": "Trophy-taker's"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Undead Slayer"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999996,
+          "cost": 0,
+          "perk": "Turtling"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Enhanced Devoted"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999996,
+          "cost": 0,
+          "perk": "Glow Worm"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999997,
+          "cost": 0,
+          "perk": "Hallucinogenic"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Demon Slayer"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Crystal Shield"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Looting"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Hoarding"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Brassican"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Lucky"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999996,
+          "cost": 0,
+          "perk": "Crackling"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Ultimatums"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1.0000000000000004,
+          "cost": 0,
+          "perk": "Energising"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1.0000000000000004,
+          "cost": 0,
+          "perk": "Talking"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999999,
+          "cost": 0,
+          "perk": "Invigorating"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 1,
+          "cost": 0,
+          "perk": "Brief Respite"
+        }
+      ],
+      [
+        {
+          "rank": 0,
+          "probability": 0.9999999999999996,
+          "cost": 0,
+          "perk": "Wise"
+        }
+      ]
+    ],
+    "outcomes": {
+      "": 1.0000000000000004
+    }
+  }
+]

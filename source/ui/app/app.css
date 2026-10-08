@@ -1,0 +1,42 @@
+:root { --color-subtle: #637083; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6f8; color: #202936; font: 14px/1.6 system-ui, sans-serif; }
+a { color: #285b9a; }
+button, input { font: inherit; }
+.app-main { max-width: 1440px; margin: 24px auto; padding: 28px; background: white; border: 1px solid #d8dfe6; border-radius: 8px; }
+h1 { margin: 0; font-size: 28px; }
+header p { color: #637083; margin: 4px 0 20px; }
+.turbo-status { display: inline-block; padding: 5px 10px; margin-bottom: 14px; background: #eef3f8; border-radius: 4px; }
+.turbo-status--error, .errorbox { color: #982121; background: #fff0f0; padding: 10px; }
+#perkFinder { min-height: 140px; }
+#perkFinder .oo-ui-fieldsetLayout { margin-top: 0; }
+#perkFinder .oo-ui-fieldLayout { margin-top: .65em; }
+#perkCalcResult { margin-top: 20px; overflow-x: auto; }
+.tile, .perkFinderFilterPanel, .perkFinderTailNotice { background: #f6f8fa; border: 1px solid #d8dfe6; }
+.wikitable { width: 100%; border-collapse: collapse; }
+.wikitable th, .wikitable td { border: 1px solid #d8dfe6; padding: 8px 10px; text-align: left; vertical-align: middle; }
+.wikitable th { background: #eef2f6; }
+/* Artwork is replaced by readable names. Generic control icons remain local. */
+.perkCalcPotion, .perkCalcShell { display: none; }
+.perkCalcPerk, .perkCalcPerkImg, .perkCalcCompImg { display: inline; width: auto; height: auto; background: none; }
+.perkCalcPerkImg::after { content: attr(data-perk); }
+.perkCalcCompImg::after { content: attr(data-comp); }
+.perkCalcRank::before { content: ' '; }
+.data-rank-1::after { content: '1'; }
+.data-rank-2::after { content: '2'; }
+.data-rank-3::after { content: '3'; }
+.data-rank-4::after { content: '4'; }
+.data-rank-5::after { content: '5'; }
+.data-rank-6::after { content: '6'; }
+.data-rank-7::after { content: '7'; }
+.perkCalcPerk + .perkCalcPerk::before { content: ', '; }
+.perkFinderFilterIconToggle .oo-ui-buttonElement-button { padding: 6px 10px !important; }
+.perkFinderFilterIconToggle .oo-ui-labelElement-label { line-height: 1.4 !important; }
+.perkFinderFilterIconToggle .perkCalcPerk, .perkFinderFilterIconToggle .perkCalcPerkImg, .perkFinderFilterIconToggle .perkCalcCompImg { display: inline !important; }
+.coins { white-space: nowrap; }
+.coins::after { content: ' gp'; color: #637083; }
+.help { margin-top: 24px; }
+.app-footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid #d8dfe6; color: #637083; font-size: 12px; }
+.app-toast { position: fixed; right: 20px; bottom: 20px; max-width: 360px; padding: 12px 16px; color: white; background: #202936; border-radius: 6px; opacity: 0; pointer-events: none; }
+.app-toast.is-visible { opacity: 1; }
+@media (max-width: 700px) { .app-main { margin: 0; padding: 16px; border: 0; border-radius: 0; } }

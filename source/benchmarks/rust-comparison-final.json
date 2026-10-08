@@ -1,0 +1,35 @@
+[
+  {
+    "name": "rust",
+    "mode": "--contributors",
+    "wallMs": 25.413899999999998,
+    "status": 0,
+    "stdout": "",
+    "stderr": "290 bound survivors enumerated in 32.1µs\n290 matches in 2.1375ms; 1212 unique perk orderings\n"
+  },
+  {
+    "name": "reference",
+    "mode": "--contributors",
+    "wallMs": 63.76520000000001,
+    "status": 0,
+    "stdout": "iteration=0 ms=9.228 candidates=207246 levels=55 best=0.3157822691005797\niteration=1 ms=6.869 candidates=207246 levels=55 best=0.3157822691005797\niteration=2 ms=7.039 candidates=207246 levels=55 best=0.3157822691005797\niteration=3 ms=7.104 candidates=207246 levels=55 best=0.3157822691005797\niteration=4 ms=7.069 candidates=207246 levels=55 best=0.3157822691005797\n",
+    "stderr": "Starting reference solve with 207246 candidates\nStarting reference solve with 207246 candidates\nStarting reference solve with 207246 candidates\nStarting reference solve with 207246 candidates\nStarting reference solve with 207246 candidates\n"
+  },
+  {
+    "name": "rust",
+    "mode": "--all-materials",
+    "wallMs": 45.973,
+    "status": 0,
+    "stdout": "",
+    "stderr": "5050 bound survivors enumerated in 672.6µs\n5050 matches in 19.9271ms; 48522 unique perk orderings\n"
+  },
+  {
+    "name": "reference",
+    "mode": "--all-materials",
+    "wallMs": 15008.853000000001,
+    "status": null,
+    "error": "spawnSync ../reference-solver/target/release/reference-harness.exe ETIMEDOUT",
+    "stdout": "",
+    "stderr": "Starting reference solve with 45914084026285582 candidates\n"
+  }
+]

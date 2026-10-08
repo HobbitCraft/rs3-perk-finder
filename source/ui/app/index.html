@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Perk Finder</title>
+  <link rel="stylesheet" href="/vendor/oojs-ui/oojs-ui-wikimediaui.min.css">
+  <link rel="stylesheet" href="/vendor/oojs-ui/oojs-ui-widgets-wikimediaui.min.css">
+  <link rel="stylesheet" href="/vendor/oojs-ui/oojs-ui-windows-wikimediaui.min.css">
+  <link rel="stylesheet" href="/vendor/runescape/perkfinder-core.css">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <main class="app-main">
+    <header><h1>Perk Finder</h1><p>Local perk search powered by Rust.</p></header>
+    <div id="boot-status" class="turbo-status" role="status">Loading calculator…</div>
+    <div id="perkFinder"></div>
+    <details class="help"><summary>How to use</summary>
+      <p>Select one or two perks and their minimum ranks, choose your level and potion, then select the gizmo types and start the search.</p>
+      <p>The advanced distinct-material limit controls the search scope. Use nine for unrestricted ancient-gizmo searches. Broad searches may take longer. Click a column heading to sort results.</p>
+    </details>
+    <footer class="app-footer">Calculator adapted from RuneScape Wiki code and data under CC BY-NC-SA 3.0. Not affiliated with Jagex or the RuneScape Wiki.</footer>
+  </main>
+  <div id="app-toast" class="app-toast" aria-live="polite"></div>
+  <script src="/boot.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* <nowiki> */
+
+.perkFinderFieldset {
+	max-width: 600px;
+	margin-bottom: 1em;
+}
+
+.perkFinderInlineRow {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+}
+
+.perkFinderInlineRow .oo-ui-fieldLayout {
+	margin-right: 0;
+}
+
+.perkFinderButtons {
+	margin: 0.5em 0 1em 0;
+}
+
+#perkFinder #perkCalcResult {
+	padding: 0.75em;
+	width: 100%;
+	max-width: none;
+	box-sizing: border-box;
+}
+
+#perkFinder #perkCalcResult table {
+	margin-top: 0.5em;
+	width: 100%;
+}
+
+/* Sticky header */
+#perkFinder #perkCalcResult table.wikitable thead th {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+#perkFinder #perkCalcResult table.wikitable thead th.perkFinderSortableHeader {
+	cursor: pointer;
+	padding-right: 1.35em;
+	user-select: none;
+}
+
+#perkFinder #perkCalcResult table.wikitable thead th.perkFinderSortableHeader::after {
+	content: '\2195';
+	position: absolute;
+	right: 0.35em;
+	op: 50%;
+	transform: translateY(-50%);
+	opacity: 0.45;
+}
+
+#perkFinder #perkCalcResult table.wikitable thead th[aria-sort='ascending']::after {
+	content: '\25B2';
+	opacity: 0.9;
+}
+
+#perkFinder #perkCalcResult table.wikitable thead th[aria-sort='descending']::after {
+	content: '\25BC';
+	opacity: 0.9;
+}
+
+#perkFinder #perkCalcResult table.wikitable thead th.perkFinderSortableHeader:focus-visible {
+	outline: 2px solid #36c;
+	outline-offset: -3px;
+}
+
+#perkFinder #perkCalcResult .errorbox {
+	margin: 0;
+}
+
+.perkFinderSpinner {
+	display: inline-block;
+	animation: perkFinderSpin 1s linear infinite;
+}
+@keyframes perkFinderSpin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* Status line shown while the worker is searching. */
+.perkFinderStatus {
+	margin: 0.5em 0;
+}
+/* Sub-status line under the main status. */
+.perkFinderSubStatus {
+	margin: 0 0 0.5em 0;
+	font-size: 0.85em;
+	line-height: 1.4;
+	height: 1.4em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.perkFinderMatCell {
+	padding: 0;
+}
+.perkFinderMatLink,
+.perkFinderMatLink:link,
+.perkFinderMatLink:visited {
+	text-decoration: none;
+	display: block;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 0.2em 0.4em;
+}
+.perkFinderMatLink:hover .perkFinderMatCount,
+.perkFinderMatLink:focus .perkFinderMatCount,
+.perkFinderMatLink:hover .perkFinderMatEmpty,
+.perkFinderMatLink:focus .perkFinderMatEmpty {
+	text-decoration: underline;
+}
+.perkFinderMatGroup {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.25em;
+	white-space: nowrap;
+}
+.perkFinderMatCount {
+	font-weight: bold;
+	vertical-align: middle;
+	margin-right: 0.15em;
+}
+/* Material count badges in the Required components column. */
+.perkFinderMatGroup[data-cat="common"]   .perkFinderMatCount { color: currentColor; }
+.perkFinderMatGroup[data-cat="uncommon"] .perkFinderMatCount { color: #d97706; }
+.perkFinderMatGroup[data-cat="rare"]     .perkFinderMatCount { color: #cc0000; }
+.perkFinderMatGroup[data-cat="ancient"]  .perkFinderMatCount { color: #800080; }
+.perkFinderMatGroup[data-cat="empty"]    .perkFinderMatCount { color: var(--color-subtle); }
+.perkFinderMatEmpty {
+	color: var(--color-subtle);
+	vertical-align: middle;
+}
+
+.perkFinderMatLink .perkCalcCompImg {
+	margin: 0;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+/* Tail paused notice + "Continue search" button */
+.perkFinderTailContinue {
+	margin: 0.5em 0;
+}
+.perkFinderTailContinue:empty {
+	margin: 0;
+}
+.perkFinderTailNotice {
+	padding: 0.75em 1em;
+	font-size: 0.95em;
+	border-radius: 2px;
+}
+.perkFinderContinueBtn {
+	margin-top: 0.5em;
+	padding: 6px 14px;
+	border-radius: 2px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* "Show next 10000 rows" pagination button */
+.perkFinderShowMore {
+	margin: 0.75em 0;
+	text-align: center;
+}
+.perkFinderShowMoreBtn {
+	padding: 6px 18px;
+	border-radius: 2px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.perkFinderExportRow {
+	margin: 0.5em 0;
+	text-align: right;
+}
+.perkFinderExportBtn {
+	padding: 5px 12px;
+	border-radius: 2px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* Filter panel */
+.perkFinderFilterPanel {
+	margin: 0.5em 0;
+	padding: 0.5em 0.75em;
+	border-radius: 2px;
+}
+.perkFinderFilterPanel:empty {
+	display: none;
+}
+.perkFinderFilterHeader {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+.perkFinderFilterHeaderText {
+	font-weight: bold;
+}
+.perkFinderFilterBody {
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+}
+
+.perkFinderFilterRow {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	margin: 0.25em 0;
+	flex-wrap: wrap;
+}
+.perkFinderFilterCheck {
+	flex: 0 0 auto;
+}
+.perkFinderFilterLabel {
+	flex: 0 0 160px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.perkFinderFilterControl {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+	flex-wrap: wrap;
+}
+
+.perkFinderFilterNumWrap {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+}
+.perkFinderFilterUnit {
+	font-size: 0.9em;
+}
+
+.perkFinderFilterIconGroup {
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+.perkFinderFilterIconStack {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.perkFinderFilterIconStack .perkFinderFilterIconGroup:empty {
+	display: none;
+}
+.perkFinderFilterIconToggle .oo-ui-buttonElement-button {
+	padding: 2px 4px !important;
+	min-height: 0 !important;
+	min-width: 0 !important;
+}
+.perkFinderFilterIconToggle .oo-ui-labelElement-label {
+	line-height: 1 !important;
+}
+.perkFinderFilterIconToggle .perkCalcPerk,
+.perkFinderFilterIconToggle .perkCalcPerkImg,
+.perkFinderFilterIconToggle .perkCalcCompImg {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.perkFinderAdvancedBox {
+	padding: 5px;
+	border: 1px solid #a2a9b1;
+	border-radius: 2px;
+	margin: 5px 0;
+}
+body.wgl-theme-dark .perkFinderAdvancedBox {
+	border-color: #3f5073;
+}
+
+/* Mirror form calc. */
+.perkFinderFieldset .oo-ui-fieldLayout-align-right > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header {
+	width: 35%;
+	margin-right: 5%;
+}
+
+.perkFinderCompRow {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	margin: 2px 0;
+}
+.perkFinderCompRowSelect {
+	flex: 0 0 auto;
+}
+.perkFinderCompRow .perkFinderFilterIconGroup {
+	flex: 1 1 auto;
+}
+.perkFinderCompRowSelect .oo-ui-buttonElement-button {
+	padding: 1px 6px !important;
+	min-height: 0 !important;
+	min-width: 0 !important;
+	font-size: 0.85em;
+}
+
+.perkFinderHeadline {
+	margin-bottom: 0.5em;
+}
+.perkFinderHeadline p {
+	margin: 0 0 0.25em 0;
+}
+
+.perkFinderSlotPositions {
+	font-family: monospace, monospace;
+	font-size: 0.85em;
+}
+
+/* </nowiki> */

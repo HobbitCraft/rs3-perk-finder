@@ -1,0 +1,36 @@
+{
+  "times": [
+    {
+      "searchMs": 25.5301,
+      "transferMs": 38.61619999999999
+    },
+    {
+      "searchMs": 19.6726,
+      "transferMs": 31.219599999999957
+    },
+    {
+      "searchMs": 20.3518,
+      "transferMs": 29.61189999999999
+    },
+    {
+      "searchMs": 20.758,
+      "transferMs": 30.763400000000047
+    },
+    {
+      "searchMs": 19.849700000000002,
+      "transferMs": 30.033199999999965
+    },
+    {
+      "searchMs": 20.312299999999997,
+      "transferMs": 30.928999999999974
+    },
+    {
+      "searchMs": 19.7318,
+      "transferMs": 28.79550000000006
+    }
+  ],
+  "searchMs": 19.7318,
+  "survivors": 5050,
+  "logicalTotal": 328693558049,
+  "cancelled": false
+}
