@@ -7,11 +7,13 @@ text-based interface, and one self-contained Windows executable.
 
 Download **[Perk Finder.exe](./Perk%20Finder.exe)** using GitHub's **Download raw
 file** button, then double-click it. The calculator opens in your default
-browser. **The EXE is all you need**: no source folder, installer, npm, Node,
-Rust installation, or companion files. Windows x64 only.
+browser. 
 
-Calculations and interface assets are embedded and work offline. The application
-serves only on `127.0.0.1`, chooses an available port, and shuts down about
+**The EXE is all you need**
+
+Entire thing works offline.
+
+The application serves only on `127.0.0.1`, chooses an available port, and shuts down about
 90 seconds after its browser tabs close.
 
 Based on the [RuneScape Wiki perk calculator](https://runescape.wiki/w/Calculator:Perks/Search).
